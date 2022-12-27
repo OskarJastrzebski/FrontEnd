@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Counter pt.2</title>
+
+    <script>
+        let counter = 0;
+        function count(){
+            counter++;
+            document.querySelector('h1').innerHTML = counter;
+        
+            //`` oznacza coś takiego jak f string w pythonie 
+            // w środku wpisujemy co chcemy wyświetlić plus ${}
+            if(counter % 10 === 0){
+                alert(`Counter is now ${counter}`)
+            }
+        }
+
+            // to wyrażenie zwraca się do samej funkcji tylko i wyłącznie wtedy kiedy przycisk jest kliknięty
+            document.addEventListener('DOMContentLoaded', function(){
+                document.querySelector('button').onclick = count;
+            })
+            
+            
+
+        
+    </script>
+</head>
+<body>
+    
+    <h1>0</h1>
+    <button>Count</button>
+</body>
+</html>
