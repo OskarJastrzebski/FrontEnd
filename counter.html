@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Counter</title>
+    <script>
+        let counter = 0;
+
+        function count(){
+            counter++;
+            alert(counter)
+        }
+
+        function hello(){
+
+            const heading = document.querySelector('h1');
+
+            if(heading.innerHTML === 'Good Morning'){
+                heading.innerHTML = 'Goodbye';
+            }else{
+                heading.innerHTML = 'Good Morning'
+            }
+   
+        }
+
+    </script>
+</head>
+<body>
+    
+    <h1>Good Morning</h1>
+
+    <button onclick="hello()">Click Me!</button>
+
+    <button onclick="count()">Counter</button>
+
+
+</body>
+</html>
