@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <title>ToDo List</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            //disabled from submitting empty string 
+            document.querySelector('#submit').disabled = true;
+
+            // when someone typed something form is enabled
+            document.querySelector('#task').onkeyup = () =>{
+                if(document.querySelector('#task').value.length > 0){
+                    document.querySelector('#submit').disabled = false; 
+                }else{
+                    document.querySelector('#submit').disabled = true;
+                }
+                
+            }
+
+            document.querySelector('form').onsubmit = ()=>{
+
+                const Task = document.querySelector('#task').value;
+                
+                const li = document.createElement('li');
+                li.innerHTML = Task;    
+
+                document.querySelector('#tasks').append(li);
+
+                document.querySelector('#task').value = "";
+
+                //after submitting one element key comes up to disabled again 
+                document.querySelector('#submit').disabled = true;
+
+                //Stop form from submitting 
+                return false;
+            }
+        }) 
+            
+    </script>
+</head>
+<body>
+    <h1>Tasks</h1>
+    <ul id="tasks">
+    </ul>
+    <form>
+        <input id="task" placeholder="New Task" type="text">
+        <input id="submit" type="submit">
+    </form>
+</body>
+</html>
