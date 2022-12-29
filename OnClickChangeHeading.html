@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>OnClick</title>
 
 
     <script>
-        numbers = ["1", "2", "3"]
+       
+       
+       
+        function ChangeValue(){
 
-        function test(){
-            let change = document.getElementById('heading')
 
-            change.innerHTML = numbers
+        let text_box = document.getElementById('text_')
+
+        let value_ = text_box.value;
+
+        document.querySelector('#heading').innerHTML = value_
+
+
+
 
         }
 
-       
-  
 
 
     </script>
@@ -27,8 +31,14 @@
 </head>
 <body>
 
-    <h1 id="heading">test</h1>
-    <button onclick="test()">Click me </button>
+    <h1 id="heading">Hello put your name</h1>
+
+
+        <button onclick="ChangeValue()">Click to submit </button>
+
+        <input autofocus type="text" placeholder="Type your name" id="text_">
+
+
 
 
 </body>
