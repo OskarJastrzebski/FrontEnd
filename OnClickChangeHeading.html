@@ -4,25 +4,38 @@
 
     <title>OnClick</title>
 
-
     <script>
-       
-       
-       
+         
         function ChangeValue(){
 
-
-        let text_box = document.getElementById('text_')
-
-        let value_ = text_box.value;
-
-        document.querySelector('#heading').innerHTML = value_
+        
+        let test = document.getElementById('text_').value.length
 
 
+        let value_ = document.querySelector('#text_').innerHTML = test
 
+        let input = document.getElementById('text_').value
 
+        test_len = 1
+      
+
+        if(test <= test_len){
+            
+            document.querySelector('#heading').innerHTML = "Za krótkie na imie :/"
+        }else{
+            document.querySelector('#heading').innerHTML = (`Cześć ${input}`) 
         }
 
+ 
+        let click_ = document.getElementById('button_')
+
+        click_.addEventListener('click', () =>{
+            setTimeout(()=>{
+                location.reload(1000)
+            })
+        })
+        
+        }
 
 
     </script>
@@ -31,14 +44,10 @@
 </head>
 <body>
 
-    <h1 id="heading">Hello put your name</h1>
-
-
-        <button onclick="ChangeValue()">Click to submit </button>
-
-        <input autofocus type="text" placeholder="Type your name" id="text_">
-
-
+    <h1 id="heading">Wprowadź swoje imię:</h1>
+    <button onclick="ChangeValue()" id="zat">Zatwierdź </button>
+    <button id="button_">Odśwież</button>
+    <input autofocus type="text" placeholder="Wprowadź swoje imie:" id="text_">
 
 
 </body>
