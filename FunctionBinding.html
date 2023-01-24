@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Binding</title>
+    <script>
+        // utworzyłem dwóch userów user i user2
+        //jeden user nazywa sie Oskar a drugi Karol
+        let user = {
+            name: "Oskar"
+        }
+        let user2 = {
+            name:"Karol"
+        }
+        //tworze funkcje która wywołuje nazwę
+        function func(){
+            console.log(this.name)
+        }
+        //tworzę zmienną i binduje funkcje do jakiegokolwiek usera chce
+        //w tym przypadku user 2
+        let test = func.bind(user2)
+        //wywołuje tą zmienna jako funkcje i wyświetlają mi sie dane 
+        //z funkcji ale z danymi od objektów
+        test()
+        //OUTPUT:Karol   
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
